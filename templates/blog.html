@@ -1,24 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1 align="center">Build A Blog</h1>
-    
-    <p>List of published blogs</p>
-    <hr/>
     {% if blogs|length == 0 %}
-    <p>Sorry, no blogs published yet !!</p>
+        <p>No posts yet</p>
     {% else %}
-
-            {% for blog in blogs %}
-            <a href="/blog/details/{{blog.id}}">{{blog.title}}</a>
-            <br><br>
-            {{blog.body}}
-            <br><br>
-            {% endfor %}
-    
-
+    <ul>
+        {% for blog in blogs %}
+        <li> <a href="/details/{{blog.id}}">{{blog.title}}</a> 
+        <br><br>
+        {{blog.body}}
+        <br><br>
+        written by <a href="/details/{{blog.owner.username}}">{{blog.owner.username}}</a>
+        <br><br>
+        </li>
+        {% endfor %}
+    </ul>
     {% endif %}
-
-    <hr />
-
 {% endblock %}
