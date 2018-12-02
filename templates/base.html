@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+
+        <title>{{pgtitle}}</title>
+        <a href='/blog'>* Home</a>
+        <br/>
+        <a href='/blog/newpost'>* Post New Blog</a>
+        <style type="text/css">
+            .error {
+                color: red;
+            }
+            label {
+               font-weight: bold; display: block; width: 150px; align-self: left; padding: 20px 20px;
+            margin: 8px 0
+            }
+           label:after { content: ": " }
+           input[type=text] {
+            padding: 10px 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+    {% block content %}
+    {% endblock %}
+
+    </body>
+</html>
